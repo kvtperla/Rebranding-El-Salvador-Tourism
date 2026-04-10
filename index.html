@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
+    <title>Story by HTML5 UP</title> 
+    <link rel="stylesheet" href="assets/css/main.css" /> 
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.75em 1.5em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5em;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 120px; 
+        }
+
+        .content p,
+        .content ul,
+        .content li {
+            text-align: left !important;
+        }
+        #intro {
+            max-width: 1100px !important;
+            min-height: 550px;
+        }
+        .banner-wrapper {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .banner-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.45); 
+            z-index: 2;
+        }
+        .banner-title-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 90%;
+            z-index: 3;
+            text-shadow: 0px 4px 10px rgba(0,0,0,0.85);
+        }
+        .banner-title-container h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+        .banner-title-container h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 0;
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .banner-title-container h1 {
+                font-size: 2.2rem;
+            }
+            .banner-title-container h3 {
+                font-size: 1rem;
+            }
+        }
+        .button:hover {
+            background-color: #0033A0 !important;
+            color: #ffffff !important;
+        }
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            padding: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        @media (max-width: 650px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .analysis-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+            height: 320px;
+        }
+        .analysis-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(55%);
+            transition: 0.3s ease;
+        }
+        .analysis-card:hover img {
+            filter: brightness(40%);
+        }
+        .analysis-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+            width: 90%;
+            z-index: 2;
+        }
+        .analysis-overlay h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0px 2px 6px rgba(0,0,0,0.7);
+        }
+        .analysis-overlay .button {
+            background-color: rgba(255,255,255,0.95);
+            color: #0033A0;
+            font-weight: 700;
+            border-radius: 6px;
+            padding: 0.6em 1.2em;
+            transition: 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: fit-content;
+        }
+        .analysis-overlay .button:hover {
+            background-color: #0033A0;
+            color: #ffffff !important;
+        }
+        @media (max-width: 600px) {
+            .analysis-overlay h3 {
+                font-size: 1.1rem;
+            }
+            .analysis-card {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <nav class="navbar">
+        <ul>
+            <li><a href="#intro">Home</a></li>
+            <li><a href="#historic">Historical & Tourism Background of El Salvador</a></li>
+            <li><a href="#theory">Theoretical Framework</a></li>
+            <li><a href="#analysis">Analysis of Advertisements & Documentaries</a></li>
+            <li><a href="#conclusion">Discussion and Conclusions</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+        <section id="top" class="hero-image" style="position:relative;">
+
+            <div class="banner-wrapper">
+                <div class="banner-title-container">
+                    <h1>Rebranding El Salvador: Tourism Media Strategies Under Nayib Bukele</h1>
+                    <h3>Written by: Katherine Perla</h3>
+                </div>
+                <img src="images/banner.jpg" alt="El Salvador Banner Image">
+            </div>
+
+            <div id="intro" class="content inner" style="margin:2em auto; padding:1em;">
+                <h1>Introduction</h1>
+                <p>
+                    El Salvador has always carried a complicated image for me. Growing up, it was a country that many 
+                    overlooked and often felt invisible in conversation about Central American countries. When conversations 
+                    were brought up it was focused always on violence, gangs, or its instability. Traveling was considered 
+                    high-risk, with curfews set within cities and being outside after dark was dangerous. For many years, 
+                    El Salvador wasn’t seen as a tourist destination at all, it was a place to visit family, not a place 
+                    to explore the country's beauty.
+                </p>
+                <p>
+                    This perception was not accidental. El Salvador endured a brutal civil war from 1980 to 1992, which 
+                    displaced thousands of families, including many of my own relatives. Even after the war ended, gang 
+                    violence continued to fill communities and the country became internationally known as one of the 
+                    most dangerous places in the world. Tourism was almost nonexistent, and for many displaced Salvadorans 
+                    returning home was never an option. This fear continued until 2019, where the narrative shifted 
+                    dramatically. In 2019, Presidente Nayib Bukele was elected to become the new government for El Salvador. 
+                    Under his administration El Salvador rebranded into one of the safest countries in the world in only 5 
+                    years. Currently, what was once a country that was defined by danger is now marketed as a country of 
+                    safety and a tropical paradise. However, this shift wasn’t a result of governmental advertisements, 
+                    it was highly driven by Salvadorans and organic advertisements, whose everyday observation and engagement
+                    with the country online has shifted this national image of the country, which highly influenced 
+                    international curiosity of what El Salvador has to bring.
+                </p>
+                <p>
+                    This paper will analyze four advertisements and media texts to understand how El Salvador’s national 
+                    identity has been reconstructed through tourism campaigns: the documentary 
+                    <a href="LaVidaLoca.html">La Vida Loca (2008)</a>, the government ad 
+                    <a href="GreatLikeOurPeople.html">El Salvador Great Like Our People (2010s)</a>, the 
+                    <a href="SurfCity.html">Surf City campaigns (2019–present)</a>, and the YouTube documentary 
+                    <a href="CECOT.html">The World’s Highest Security Prison: CECOT (2025)</a>. Through this comparison, 
+                    it will explore how media representation influences tourist behaviour, diaspora engagement, and the 
+                    broader rebranding of a country. Throughout this semiotic analysis, I will draw on theories from Stuart Hall, 
+                    Roland Barthes, Nancy Fraser, Tiziana Terranova, and others. Together, these frameworks will help me answer 
+                    the questions, can a country’s perception be fundamentally reshaped in only five years? And, what are 
+                    the risks of tying national identity so closely to the narrative of safety and control?
+
+                </p>
+            </div>
+        </section>
+        
+        <section id="historic" class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+            <div class="content">
+                <h2>Historical & Tourism Background of El Salvador</h2>
+                <p>
+                    To understand El Salvador’s current tourism campaigns, it's essential to recognize the country's long 
+                    history of conflict, migration, and insecurity. For decades, El Salvador was framed not as a tourist 
+                    destination but as a nation marked by war and violence. Displaying this history helps reveal how 
+                    national images are constructed and reconstructed over time.
+                </p>
+                <ul class="actions stacked">
+                    <li><a href="ReadMore.html" class="button">Read More</a></li>
+                </ul>
+                
+            </div>
+            <div class="image">
+                <img src="images/spotlight01.jpg" alt="" />
+            </div>
+            
+        </section>
+        <section id="theory" class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+            <div class="content">
+                <h2>Theoretical Framework</h2>
+                <p>
+                    By drawing on key theoretical frameworks we can analyze how El Salvador’s national identity has been 
+                    reconstructed through tourism. These theories will explain how advertisements and documentations 
+                    function as ideological texts that shape public perception.
+                </p>
+                
+                <ul class="actions stacked">
+                    <li><a href="ReadMore3.html" class="button">Read More</a></li>
+                </ul>
+                
+            </div>
+            <div class="image">
+                <img src="images/spotlight02.jpg" alt="" />
+            </div>
+            
+        </section>
+        <section id="analysis" class="wrapper style1 align-center">
+            <div class="inner" style="text-align:left;">
+                
+                <h2>Analysis of Advertisements and Documentaries</h2>
+                
+                <p>
+                    Throughout this section, please explore the gallery below for each advertisement analyzed in this paper. 
+                    The gallery highlights <a href="LaVidaLoca.html">La Vida Loca (2008)</a>, 
+                    <a href="GreatLikeOurPeople.html">El Salvador: Great Like Our People (2017)</a>, 
+                    the <a href="SurfCity.html">Surf City tourism campaign (2019–present)</a>, 
+                    and the <a href="CECOT.html">CECOT Mega‑Prison documentary (2025)</a>.
+                </p>
+                
+            </div>
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <img src="images/gallery/thumbs/01.jpg" alt="La Vida Loca (2008)">
+                    <div class="analysis-overlay">
+                        <h3>La Vida Loca (2008)</h3>
+                        <a href="LaVidaLoca.html" class="button small">Analysis</a>
+                    </div>
+                </div>
+                <div class="analysis-card">
+                    <img src="images/gallery/thumbs/02.jpg" alt="El Salvador Great Like Our People (2017)">
+                    <div class="analysis-overlay">
+                        <h3>El Salvador Great Like Our People (2017)</h3>
+                        <a href="GreatLikeOurPeople.html" class="button small">Analysis</a>
+                    </div>
+                </div>
+                <div class="analysis-card">
+                    <img src="images/gallery/thumbs/03.jpg" alt="Surf City (2019–present)">
+                    <div class="analysis-overlay">
+                        <h3>Surf City (2019–present)</h3>
+                        <a href="SurfCity.html" class="button small">Analysis</a>
+                    </div>
+                </div>
+                <div class="analysis-card">
+                    <img src="images/gallery/thumbs/04.jpg" alt="CECOT Mega-Prison Documentary (2025)">
+                    <div class="analysis-overlay">
+                        <h3>CECOT Mega-Prison Documentary (2025)</h3>
+                        <a href="CECOT.html" class="button small">Analysis</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </section>
+        
+        <section id="conclusion" class="wrapper style1 align-center">
+            <div class="inner" style="text-align:left;">
+                
+                <h2>Discussion and Conclusion</h2>
+                
+                <p>
+                    The analysis of El Salvador’s tourism campaign demonstrates how media text functions as tools to 
+                    reshape a national identity. Stuart Hall's encoding/decoding model reveals that campaigns like Surf 
+                    City and the CECOT mega prison encode messages of safety and prosperity, but audiences may decode 
+                    them differently depending on their social position (<a href="References.html#ref-hall1980">Hall, 1980</a>). 
+                    International tourists will continue to decode Bukele campaigns as progressive for the country; 
+                    however, it’s evident from a Salvadoran perspective that these campaigns have an underlying false 
+                    narrative of what El Salvador truly is. It seems to disregard the cultural beauty that already lives 
+                    within the country of El Salvador. Instead, it creates a new narrative for who El Salvador is today, 
+                    which blurs the line for the actual Salvadoran living in the country as to what their national 
+                    identity truly is compared to what the media is representing them as.
+                </p>
+                <p>
+                    To illustrate these competing readings, I included a short video of my dad reflecting on his experience 
+                    returning to El Salvador as a visitor. His perspective shows how Salvadorans themselves decode these 
+                    national narratives differently from the way they are promoted globally.
+                </p>
+                
+                <div style="margin: 2em 0; text-align:center;">
+                    <iframe 
+                        width="100%" 
+                        height="415" 
+                        src="https://www.youtube.com/embed/jts9b2T6l94" 
+                        title="Personal Reflection Video"
+                        style="border:0; max-width:800px;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <p>
+                    Roland Barthes’ concept of mythologies further clarifies how these campaigns naturalize selective 
+                    identities. When displaying surfing, hospitality, and safety it creates a ‘timeless’ feature of 
+                    Salvadoran culture, but erases the already built identity, violence, and migration Salvadorans endured 
+                    (<a href="References.html#ref-barthes1972">Barthes, 1972</a>). By transforming the identity into a new brand, it selects certain 
+                    narratives it wants to display as a way to further this new identity for outside consumers. Government 
+                    campaigns construct a dominant narrative that silences counterpublics, which are Salvadorans, to ignore 
+                    the inequalities, displacement, and human rights abuses in the country 
+                    (<a href="References.html#ref-fraser1990">Fraser, 1990</a>). The CECOT prison displays this dynamic, by presenting a proof of safety 
+                    but marginalizing voices that critique this form of authoritarianism. Karl Marx’s idea of commodity 
+                    fetishism frames tourism branding as a form of commodification. Safety, pride, and identity are packaged 
+                    as products for international visitors, hiding the social struggles behind them 
+                    (<a href="References.html#ref-marx1867">Marx, 1867</a>).
+                </p>
+                
+                <p>
+                    In conclusion, these frameworks display that El Salvador tourism campaigns not only function as 
+                    promotional campaigns but also as an ideology. It reshapes the national identity for global consumption, 
+                    but in all cases, it continues to mask the social struggle while amplifying the selective narrative 
+                    the government wants to display. It blurs the line for Salvadorans finding an identity to relate to 
+                    because they can no longer connect to their national identity due to the skewed perception created 
+                    by the government and media. These built identities are packaged for consumption, while masking social 
+                    struggles and transforming lived realities into myths. This paper shows that branding is not simply 
+                    about attracting a tourist but about reshaping how the nation is imaged globally. In El Salvador’s 
+                    case, the shift from violence to pride, adventure, and security illustrates how the media can overwrite 
+                    decades of fear with selective narratives of prosperity. Yet, these narratives remain contested, reminding 
+                    us that a national identity is never fixed but always created.
+                </p>
+                <div style="margin-top: 2em; text-align: center;">
+                    <a href="References.html" class="button big wide">References</a>
+                </div>
+                
+            </div>
+            
+        </section>
+    </div>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+    
+</html>
+

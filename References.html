@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>References</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <style>
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 0.75em 1.5em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5em;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .inner, p, h1 {
+            text-align: left !important;
+        }
+
+        
+        [id] {
+            scroll-margin-top: 120px;
+        }
+
+        
+        .reference-highlight {
+            background-color: #fff3b0;
+            transition: background-color 1.5s ease;
+        }
+    </style>
+
+    <script>
+       
+        window.onload = function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const el = document.querySelector(hash);
+                if (el) {
+                    el.classList.add("reference-highlight");
+                    setTimeout(() => el.classList.remove("reference-highlight"), 1500);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html#intro">Home</a></li>
+        <li><a href="index.html#historic">Historical & Tourism Background of El Salvador</a></li>
+        <li><a href="index.html#theory">Theoretical Framework</a></li>
+        <li><a href="index.html#analysis">Analysis of Advertisements & Documentaries</a></li>
+        <li><a href="index.html#conclusion">Discussion and Conclusions</a></li>
+    </ul>
+</nav>
+
+<section class="wrapper style1 align-center">
+    <div class="inner">
+        <h1>References</h1>
+
+        <p id="ref-barthes1972">Barthes, Roland. <i>Mythologies.</i> 1972.</p>
+
+        <p id="ref-marcapais2017">El Salvador Marca País. “El Salvador Great Like Our People.” YouTube, 2017.</p>
+
+        <p id="ref-fraser1990">Fraser, Nancy. “Rethinking the Public Sphere.” <i>Social Text</i>, 1990.</p>
+
+        <p id="ref-surfcity2019">Government of El Salvador. <i>Surf City</i>. Campaign, 2019–present.</p>
+
+        <p id="ref-guaita2022">Guaita Martinez, José, et al. “Tourism Competitiveness in Latin America.” 2022.</p>
+
+        <p id="ref-gutierrez2023">Gutierrez, Juan Carlos. “Urban Extractivism and Tourism Development.” 2023.</p>
+
+        <p id="ref-hall1980">Hall, Stuart. “Encoding/Decoding.” In <i>Culture, Media, Language</i>, 1980.</p>
+
+        <p id="ref-latam2023">LATAM FDI. “Tourism and Investment Boom in El Salvador.” 2023.</p>
+
+        <p id="ref-latarola2013">Latarola, Brie. <i>Surf Tourism in El Salvador.</i> 2013.</p>
+
+        <p id="ref-marx1867">Marx, Karl. <i>Capital: Volume I.</i> 1867.</p>
+
+        <p id="ref-bukele2025">Nayib Bukele. “Inauguración Surf City 2.” YouTube, 2025.</p>
+
+        <p id="ref-patel2023">Patel, Rohan. “Coastal Tourism Development and Uneven Outcomes.” 2023.</p>
+
+        <p id="ref-paula2013">Paula, R., & Eloy, C. “Selling Mexico: National Identity and Tourism Branding.” 2013.</p>
+
+        <p id="ref-poveda2008">Poveda, Christian. <i>La Vida Loca.</i> Documentary, 2008.</p>
+
+        <p id="ref-reiner2025">Reiner, David, et al. “Community-Based Tourism and Local Participation.” 2025.</p>
+
+        <p id="ref-cenet2025">Ruhi Cenet. “The World’s Highest Security Prison: CECOT.” YouTube, 2025.</p>
+
+        <p id="ref-terranova2000">Terranova, Tiziana. “Free Labor: Producing Culture for the Digital Economy.” <i>Social Text</i>, 2000.</p>
+
+        <p id="ref-vanegas2012">Vanegas, Salvador. “Tourism and Economic Growth in El Salvador.” 2012.</p>
+
+        <a href="index.html#conclusion" class="button">Go Back</a>
+    </div>
+</section>
+
+</body>
+</html>
+
